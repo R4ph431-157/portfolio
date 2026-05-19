@@ -3,7 +3,7 @@ export const profile = {
   title: "Web Developer & Tech Enthusiast",
   location: "Nigeria",
   avatar: "https://i.ibb.co/bg5X8yPf/photo-2025-04-04-01-09-17.jpg",
-  resumeUrl: "./assets/resume/idyuraphael_Resume.pdf",
+  resumeUrl: "/assets/resume/idyuraphael_Resume.pdf",
   socials: {
     twitter: "https://x.com/r4ph431157",
     github: "https://github.com/R4ph431-157",
