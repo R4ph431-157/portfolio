@@ -66,7 +66,7 @@ export default function Skills() {
     <section
       id="skills"
       ref={sectionRef}
-      className="relative py-20 md:py-24 lg:py-28 bg-[#07070f]"
+      className="relative py-20 md:py-24 lg:py-28 bg-[#07070f] overflow-hidden"
     >
       <div className="absolute inset-0 dot-grid opacity-40" />
       <div className="absolute bottom-0 right-1/4 w-72 h-72 bg-sky-500/6 rounded-full blur-[100px] pointer-events-none" />

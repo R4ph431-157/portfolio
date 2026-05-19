@@ -27,7 +27,7 @@ export default function About() {
     <section
       id="about"
       ref={sectionRef}
-      className="relative py-20 md:py-28 lg:py-32 bg-[#07070f]"
+      className="relative py-20 md:py-28 lg:py-32 bg-[#07070f] overflow-hidden"
     >
       {/* Subtle section divider glow */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-px h-24 bg-gradient-to-b from-transparent via-violet-500/30 to-transparent" />
