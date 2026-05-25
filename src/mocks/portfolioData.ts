@@ -70,6 +70,15 @@ export const projects = [
   },
   {
     id: 4,
+    title: "Vivaloc Car Rental — Demo Project",
+    description:
+      "A demo project created for Vivaloc Car Rental Cotonou to see if they like the idea of a cool website. Built to showcase their fleet and services with a sleek, modern layout.",
+    image: "https://i.ibb.co/dwL86hkj/Screenshot-2026-05-25-132119.png",
+    link: "https://vivaloc-rentcar-demo.netlify.app/",
+    tags: ["HTML", "CSS", "JavaScript", "React", "TypeScript"],
+  },
+  {
+    id: 5,
     title: "Frontend Mentor FAQ Accordion",
     description:
       "An interactive FAQ accordion built for those exploring Frontend Mentor challenges. It features smooth toggle animations and enhances user experience by keeping content clean and organized.",
