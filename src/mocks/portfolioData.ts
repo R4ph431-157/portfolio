@@ -61,12 +61,12 @@ export const projects = [
   },
   {
     id: 3,
-    title: "Newsletter Subscription Form",
+    title: "La Casa Cielo Hotel — Demo Project",
     description:
-      "A simple and responsive newsletter subscription form designed to capture users' emails for updates. Built with HTML, CSS, and JavaScript, it includes form validation to ensure accurate user input and a seamless experience.",
-    image: "https://i.ibb.co/Lds0Ftv8/Screenshot-2025-04-03-225330.png",
-    link: "https://raphaelnewsletter.netlify.app/",
-    tags: ["HTML", "CSS", "JavaScript"],
+      "A demo site for La Casa Cielo Hotel, Cotonou, created to pitch them for a website upgrade. Designed to reflect the hotel's elegance with a modern, immersive layout built to showcase their brand and amenities.",
+    image: "https://i.ibb.co/8nqcrGV2/Screenshot-2026-05-25-094333.png",
+    link: "https://casacielohotel-demo.netlify.app/",
+    tags: ["HTML", "CSS", "JavaScript", "React", "TypeScript"],
   },
   {
     id: 4,
