@@ -7,21 +7,19 @@ export default function Hero() {
   };
 
   return (
-    <section
-      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#07070f]"
-    >
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#07070f]">
       {/* Dot grid */}
       <div className="absolute inset-0 dot-grid" />
 
-      {/* Ambient glow orbs */}
-      <div className="absolute top-1/3 -left-32 w-[400px] h-[400px] bg-violet-600/10 rounded-full blur-[80px] pointer-events-none" />
-      <div className="absolute bottom-1/3 -right-32 w-[300px] h-[300px] bg-sky-500/8 rounded-full blur-[60px] pointer-events-none" />
+      {/* Ambient glow orbs — hidden on mobile (GPU-expensive on iOS) */}
+      <div className="hidden sm:block absolute top-1/3 -left-32 w-[400px] h-[400px] bg-violet-600/10 rounded-full blur-[80px] pointer-events-none" />
+      <div className="hidden sm:block absolute bottom-1/3 -right-32 w-[300px] h-[300px] bg-sky-500/8 rounded-full blur-[60px] pointer-events-none" />
 
       <div className="relative z-10 section-container pt-20">
         <div className="section-inner text-center">
           <h1
-            className="hero-fade-in text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold leading-[1.1] tracking-tight"
-            style={{ fontFamily: "'Space Grotesk', sans-serif", animationDelay: '0.1s' }}
+            className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold leading-[1.1] tracking-tight"
+            style={{ fontFamily: "'Space Grotesk', system-ui, sans-serif" }}
           >
             <span className="text-white">Building Digital</span>
             <br />
@@ -30,18 +28,12 @@ export default function Hero() {
             <span className="text-gradient">That Matter</span>
           </h1>
 
-          <p
-            className="hero-fade-in mt-6 md:mt-10 text-base md:text-xl text-slate-400 max-w-2xl mx-auto leading-relaxed"
-            style={{ animationDelay: '0.25s' }}
-          >
+          <p className="mt-6 md:mt-10 text-base md:text-xl text-slate-400 max-w-2xl mx-auto leading-relaxed">
             Hi there, I&apos;m <strong className="text-slate-200 font-semibold">{profile.name}</strong>,{' '}
             a {profile.title} based in {profile.location}.
           </p>
 
-          <div
-            className="hero-fade-in mt-8 md:mt-12 flex flex-col sm:flex-row items-center justify-center gap-4"
-            style={{ animationDelay: '0.4s' }}
-          >
+          <div className="mt-8 md:mt-12 flex flex-col sm:flex-row items-center justify-center gap-4">
             <button
               onClick={() => handleNavClick('#projects')}
               className="group relative px-8 py-3.5 md:px-10 md:py-4 rounded-full font-semibold text-sm md:text-base transition-all duration-300 flex items-center gap-2 md:gap-2.5 whitespace-nowrap cursor-pointer text-white overflow-hidden"
@@ -66,10 +58,7 @@ export default function Hero() {
             </a>
           </div>
 
-          <div
-            className="hero-fade-in mt-10 md:mt-14 flex items-center justify-center gap-4 md:gap-7"
-            style={{ animationDelay: '0.55s' }}
-          >
+          <div className="mt-10 md:mt-14 flex items-center justify-center gap-4 md:gap-7">
             {[
               { icon: 'ri-html5-line', label: 'HTML', color: '#e34c26' },
               { icon: 'ri-css3-line', label: 'CSS', color: '#264de4' },
@@ -93,10 +82,7 @@ export default function Hero() {
             ))}
           </div>
 
-          <div
-            className="hero-fade-in mt-10 md:mt-14 flex items-center justify-center"
-            style={{ animationDelay: '0.7s' }}
-          >
+          <div className="mt-10 md:mt-14 flex items-center justify-center">
             <button
               onClick={() => handleNavClick('#about')}
               className="text-slate-700 hover:text-slate-400 transition-colors cursor-pointer animate-bounce"

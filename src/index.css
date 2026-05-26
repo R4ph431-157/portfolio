@@ -8,7 +8,7 @@
     overflow-x: hidden;
   }
   body {
-    font-family: 'DM Sans', sans-serif;
+    font-family: 'DM Sans', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
     background-color: #07070f;
     color: #e2e8f0;
     -webkit-font-smoothing: antialiased;
@@ -37,21 +37,6 @@
       background: rgba(255, 255, 255, 0.05);
     }
   }
-}
-
-@keyframes heroFadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(2rem);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.hero-fade-in {
-  animation: heroFadeIn 0.7s ease both;
 }
 
 @layer utilities {
