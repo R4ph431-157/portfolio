@@ -1,28 +1,6 @@
-import { useEffect, useRef } from 'react';
 import { profile } from '@/mocks/portfolioData';
 
 export default function Hero() {
-  const heroRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('opacity-100', 'translate-y-0');
-            entry.target.classList.remove('opacity-0', 'translate-y-8');
-          }
-        });
-      },
-      { threshold: 0.1 }
-    );
-
-    const elements = heroRef.current?.querySelectorAll('.animate-in');
-    elements?.forEach((el) => observer.observe(el));
-
-    return () => observer.disconnect();
-  }, []);
-
   const handleNavClick = (href: string) => {
     const el = document.querySelector(href);
     if (el) el.scrollIntoView({ behavior: 'smooth' });
@@ -30,7 +8,6 @@ export default function Hero() {
 
   return (
     <section
-      ref={heroRef}
       className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#07070f]"
     >
       {/* Dot grid */}
@@ -43,8 +20,8 @@ export default function Hero() {
       <div className="relative z-10 section-container pt-20">
         <div className="section-inner text-center">
           <h1
-            className="animate-in opacity-0 translate-y-8 transition-all duration-700 delay-200 text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold leading-[1.1] tracking-tight"
-            style={{ fontFamily: "'Space Grotesk', sans-serif" }}
+            className="hero-fade-in text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold leading-[1.1] tracking-tight"
+            style={{ fontFamily: "'Space Grotesk', sans-serif", animationDelay: '0.1s' }}
           >
             <span className="text-white">Building Digital</span>
             <br />
@@ -54,13 +31,17 @@ export default function Hero() {
           </h1>
 
           <p
-            className="animate-in opacity-0 translate-y-8 transition-all duration-700 delay-300 mt-6 md:mt-10 text-base md:text-xl text-slate-400 max-w-2xl mx-auto leading-relaxed"
+            className="hero-fade-in mt-6 md:mt-10 text-base md:text-xl text-slate-400 max-w-2xl mx-auto leading-relaxed"
+            style={{ animationDelay: '0.25s' }}
           >
             Hi there, I&apos;m <strong className="text-slate-200 font-semibold">{profile.name}</strong>,{' '}
             a {profile.title} based in {profile.location}.
           </p>
 
-          <div className="animate-in opacity-0 translate-y-8 transition-all duration-700 delay-400 mt-8 md:mt-12 flex flex-col sm:flex-row items-center justify-center gap-4">
+          <div
+            className="hero-fade-in mt-8 md:mt-12 flex flex-col sm:flex-row items-center justify-center gap-4"
+            style={{ animationDelay: '0.4s' }}
+          >
             <button
               onClick={() => handleNavClick('#projects')}
               className="group relative px-8 py-3.5 md:px-10 md:py-4 rounded-full font-semibold text-sm md:text-base transition-all duration-300 flex items-center gap-2 md:gap-2.5 whitespace-nowrap cursor-pointer text-white overflow-hidden"
@@ -85,7 +66,10 @@ export default function Hero() {
             </a>
           </div>
 
-          <div className="animate-in opacity-0 translate-y-8 transition-all duration-700 delay-500 mt-10 md:mt-14 flex items-center justify-center gap-4 md:gap-7">
+          <div
+            className="hero-fade-in mt-10 md:mt-14 flex items-center justify-center gap-4 md:gap-7"
+            style={{ animationDelay: '0.55s' }}
+          >
             {[
               { icon: 'ri-html5-line', label: 'HTML', color: '#e34c26' },
               { icon: 'ri-css3-line', label: 'CSS', color: '#264de4' },
@@ -109,7 +93,10 @@ export default function Hero() {
             ))}
           </div>
 
-          <div className="animate-in opacity-0 translate-y-8 transition-all duration-700 delay-600 mt-10 md:mt-14 flex items-center justify-center">
+          <div
+            className="hero-fade-in mt-10 md:mt-14 flex items-center justify-center"
+            style={{ animationDelay: '0.7s' }}
+          >
             <button
               onClick={() => handleNavClick('#about')}
               className="text-slate-700 hover:text-slate-400 transition-colors cursor-pointer animate-bounce"
