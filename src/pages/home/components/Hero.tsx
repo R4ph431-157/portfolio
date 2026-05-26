@@ -37,9 +37,8 @@ export default function Hero() {
       <div className="absolute inset-0 dot-grid" />
 
       {/* Ambient glow orbs */}
-      <div className="absolute top-1/3 -left-32 w-[500px] h-[500px] bg-violet-600/10 rounded-full blur-[140px] pointer-events-none" />
-      <div className="absolute bottom-1/3 -right-32 w-[400px] h-[400px] bg-sky-500/8 rounded-full blur-[120px] pointer-events-none" />
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-48 bg-violet-500/5 blur-[80px] pointer-events-none" />
+      <div className="absolute top-1/3 -left-32 w-[400px] h-[400px] bg-violet-600/10 rounded-full blur-[80px] pointer-events-none" />
+      <div className="absolute bottom-1/3 -right-32 w-[300px] h-[300px] bg-sky-500/8 rounded-full blur-[60px] pointer-events-none" />
 
       <div className="relative z-10 section-container pt-20">
         <div className="section-inner text-center">

@@ -16,8 +16,16 @@ export default defineConfig({
   plugins: [react()],
   base,
   build: {
-    sourcemap: true,
+    sourcemap: false,
     outDir: 'dist',
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          vendor: ['react', 'react-dom'],
+          router: ['react-router-dom'],
+        },
+      },
+    },
   },
   resolve: {
     alias: {

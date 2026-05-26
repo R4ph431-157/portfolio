@@ -7,24 +7,32 @@ export default function Navbar() {
   const [activeSection, setActiveSection] = useState('');
 
   useEffect(() => {
+    let rafId: number | null = null;
     const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
-
-      const sections = ['about', 'skills', 'projects'];
-      for (let i = sections.length - 1; i >= 0; i--) {
-        const el = document.getElementById(sections[i]);
-        if (el) {
-          const rect = el.getBoundingClientRect();
-          if (rect.top <= 150) {
+      if (rafId !== null) return;
+      rafId = requestAnimationFrame(() => {
+        rafId = null;
+        const y = window.scrollY;
+        setScrolled(y > 50);
+        if (y < 200) {
+          setActiveSection('');
+          return;
+        }
+        const sections = ['about', 'skills', 'projects'];
+        for (let i = sections.length - 1; i >= 0; i--) {
+          const el = document.getElementById(sections[i]);
+          if (el && el.getBoundingClientRect().top <= 150) {
             setActiveSection(sections[i]);
             break;
           }
         }
-      }
-      if (window.scrollY < 200) setActiveSection('');
+      });
     };
     window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      if (rafId !== null) cancelAnimationFrame(rafId);
+    };
   }, []);
 
   const handleNavClick = (href: string) => {
@@ -42,7 +50,7 @@ export default function Navbar() {
       }`}
       style={
         scrolled
-          ? { background: 'rgba(7, 7, 15, 0.85)', backdropFilter: 'blur(20px)', WebkitBackdropFilter: 'blur(20px)' }
+          ? { background: 'rgba(7, 7, 15, 0.92)', backdropFilter: 'blur(12px)', WebkitBackdropFilter: 'blur(12px)' }
           : {}
       }
     >
@@ -99,7 +107,7 @@ export default function Navbar() {
       {mobileOpen && (
         <div
           className="md:hidden border-t border-white/[0.06]"
-          style={{ background: 'rgba(7, 7, 15, 0.95)', backdropFilter: 'blur(20px)', WebkitBackdropFilter: 'blur(20px)' }}
+          style={{ background: 'rgba(7, 7, 15, 0.97)' }}
         >
           <div className="section-container py-4">
             {navLinks.map((link) => (

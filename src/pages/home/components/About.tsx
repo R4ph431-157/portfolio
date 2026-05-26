@@ -31,7 +31,7 @@ export default function About() {
     >
       {/* Subtle section divider glow */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-px h-24 bg-gradient-to-b from-transparent via-violet-500/30 to-transparent" />
-      <div className="absolute top-0 left-1/4 w-64 h-64 bg-violet-600/5 rounded-full blur-[100px] pointer-events-none" />
+      <div className="absolute top-0 left-1/4 w-48 h-48 bg-violet-600/5 rounded-full blur-[50px] pointer-events-none" />
 
       <div className="section-container relative z-10">
         <div className="section-inner">
@@ -62,6 +62,8 @@ export default function About() {
                     <img
                       src={profile.avatar}
                       alt={profile.name}
+                      loading="lazy"
+                      decoding="async"
                       className="w-full aspect-square object-cover object-top"
                     />
                   </div>

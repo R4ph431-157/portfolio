@@ -29,7 +29,7 @@ export default function Projects() {
       ref={sectionRef}
       className="relative py-20 md:py-28 lg:py-32 bg-[#07070f] overflow-hidden"
     >
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-violet-600/5 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[200px] bg-violet-600/5 rounded-full blur-[60px] pointer-events-none" />
 
       <div className="section-container relative z-10">
         <div className="section-inner">
@@ -69,6 +69,8 @@ export default function Projects() {
                     <img
                       src={project.image}
                       alt={project.title}
+                      loading="lazy"
+                      decoding="async"
                       className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700"
                     />
                     {/* Dark overlay on hover */}
