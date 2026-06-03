@@ -79,6 +79,15 @@ export const projects = [
   },
   {
     id: 5,
+    title: "Lead Africa University",
+    description:
+      "A website upgrade for Lead Africa University to give it a modern feel. Redesigned with a clean, contemporary layout to better represent the institution's vision and improve the overall user experience.",
+    image: "https://i.ibb.co/kdbFV0c/Screenshot-2026-06-03-132807.png",
+    link: "https://leadafricauniversity-demo.netlify.app/",
+    tags: ["HTML", "CSS", "JavaScript", "React", "TypeScript"],
+  },
+  {
+    id: 6,
     title: "Frontend Mentor FAQ Accordion",
     description:
       "An interactive FAQ accordion built for those exploring Frontend Mentor challenges. It features smooth toggle animations and enhances user experience by keeping content clean and organized.",
